@@ -85,9 +85,8 @@ EDGE_HOSTS = [
     h.strip()
     for h in os.environ.get(
         "EDGE_HOSTS",
-        "buyshoes.shop:443,assets.bizclikmedia.net:443,www.meteorelectrical.com:443,aandd.co.jp:443,www.petronaftco.com:443,investor.apple.com:443,www.botafogo.com.br:443,www.nomios.com:443,9mod.com:443,cnllm.com:443,www.mlkj888.com:443,www.npmjs.com:443,op.chinwa.eu.cc:443,snipaste1.speedip.eu.org:443,my.vultr.com:443,networksolutions.com:443,www.speedtest.net:443,cf.qq.ms:443,www.ventusky.com:443,cf.xreak.top:443,99.co:443,101yaoye.com:443,cloudflare-ip.mofashi.ltd:443,www.swowd.com:443,page.mercer.com:443,garuda-indonesia.com:443,grass.io:443,01-cctv.com:443,www.sage.com:443,cdn.cnno.de:443,cdn.ctn32.us.kg:443,glitterx.cloud:443,stores.staples.com:443,cdn.nodeimage.com:443,videodelivery.net:443,serviceshub.samsclub.com:443,cdn.667891.xyz:443,www.giannidelprete.it:443,jojolsj.jojojing.top:443,cdn.tzpro.xyz:443,icook.hk:443,www.scayle.com:443,cf.090227.xyz:443,53.fs1.hubspotusercontent-na1.net:443,www.trumpstruth.org:443,www.akasantech.com:443,www.crazygames.fr:443,thebeat.gehealthcare.com:443,login.rockwellautomation.com:443,www.acces-maroc.ma:443,s.bookcdn.com:443,store.ubi.com:443,wppaunz.com:443,totoro.im:443,esm.run:443,www.gov.il:443,packtpub.com:443,appstorrent.ru:443,jobsdb.com:443,duckybot.xyz:443,mskcc.org:443,mrmacintosh.com:443,zmxf.qzz.io:443,"
-        "cf.nyanya.moe:443,www.sloomb.com:443,op.chinwa.eu.cc:443,www.leics.police.uk:443,securecircle.com:443,www.shopify.com:443,"
-        "www.carousell.sg:443,www.dbs.com.sg:443,openai.com:443,linear.app:443,www.bilibili.com:443,uspto.gov:443,www.vmware.com:443",
+      
+         "",
     ).split(",")
     if h.strip()
 ]
