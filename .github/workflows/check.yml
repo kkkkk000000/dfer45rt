@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - name: Checkout
@@ -34,7 +34,7 @@ jobs:
       - name: Diagnose Worker DNS
         run: |
           echo "检查 Worker 域名解析..."
-          getent ahosts check.helei.kdns.fr || echo "DNS 解析失败"
+          getent ahosts ertyuibfgt.kijkel.kdns.fr || echo "DNS 解析失败"
 
           echo "检查 HTTPS 连接..."
           curl -sS -o /dev/null \
