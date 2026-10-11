@@ -337,7 +337,19 @@ def check_one(node, session):
             out["error"] = f"HTTP {r.status_code}"
             out["worker_error"] = True
             return out
-        j = r.json()
+        try:
+            j = r.json()
+        except ValueError as exc:
+            content_type = r.headers.get("Content-Type", "")
+            body = r.text[:500].replace("\n", "\\n")
+            out["error"] = (
+                f"JSON解析失败: {exc}; "
+                f"HTTP={r.status_code}; "
+                f"Content-Type={content_type}; "
+                f"Body={body!r}"
+            )
+            out["worker_error"] = True
+            return out
         ok = bool(j.get("success"))
         out["success"] = ok
         out["status"] = "success" if ok else "failed"
