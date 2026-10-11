@@ -497,8 +497,22 @@ def main():
     worker_errors = [r for r in failed if r.get("worker_error")]
 
     log("CLOUDFLARE WORKER", f"检测成功: {len(success)}")
-    log("CLOUDFLARE WORKER", f"检测失败: {len(failed)}" + (f" (其中 Worker 异常 {len(worker_errors)})" if worker_errors else ""))
-    log("CLOUDFLARE WORKER", f"耗时: {elapsed:.1f}s")
+log(
+    "CLOUDFLARE WORKER",
+    f"检测失败: {len(failed)}"
+    + (f" (其中 Worker 异常 {len(worker_errors)})" if worker_errors else "")
+)
+log("CLOUDFLARE WORKER", f"耗时: {elapsed:.1f}s")
+
+# 打印前 5 个异常，方便在 GitHub Actions 中排查
+if worker_errors:
+    log("WORKER DEBUG", "以下为请求异常样例:")
+    for i, item in enumerate(worker_errors[:5], 1):
+        log(
+            "WORKER DEBUG",
+            f"{i}. {item.get('host')}:{item.get('port')} "
+            f"| {item.get('error', '未知错误')}"
+        )
 
     if uniq and not success and len(worker_errors) == len(uniq):
         die("Worker 全部请求异常, 检测服务不可用 — 本次运行判定失败 (不生成空结果)")
