@@ -41,7 +41,7 @@ jobs:
             -w "HTTP 状态码: %{http_code}\n" \
             --connect-timeout 5 \
             --max-time 10 \
-            https://check.helei.kdns.fr/ \
+            https://ertyuibfgt.kijkel.kdns.fr/ \
             || echo "HTTPS 连接失败"
 
       - name: Get VPN Gate nodes + check via Cloudflare Worker + build page
